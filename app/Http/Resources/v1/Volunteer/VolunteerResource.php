@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources\v1\Volunteer;
 
+use App\Http\Resources\v1\Activity\ActivityCollection;
 use App\Http\Resources\v1\Timing\TimingResource;
 use App\Timing;
 use Illuminate\Http\Resources\Json\JsonResource;
@@ -26,6 +27,7 @@ class VolunteerResource extends JsonResource
             'social_media'=>$this->social_media,
             'fax'=>$this->fax,
             'description'=>$this->description,
+            'activity'=>new ActivityCollection($this->activities),
         ];
     }
 }

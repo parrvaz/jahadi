@@ -32,13 +32,19 @@ Route::prefix('v1')->namespace('Api\v1')->group(function () {
         Route::prefix('volunteer')->group(function () {
 
             Route::middleware('ownerVolunteer')->group(function (){
-
                 Route::post('update/{volunteer}', 'VolunteerController@update');
                 Route::post('delete/{volunteer}', 'VolunteerController@destroy');
+                Route::get('show/{volunteer}', 'VolunteerController@showSingle');
+
+                Route::prefix('activity')->group(function () {
+                    Route::post('update/{activity}', 'ActivityController@update');
+                    Route::post('delete/{activity}', 'ActivityController@destroy');
+                    Route::post('store/{volunteer}', 'ActivityController@store');
+                    Route::get('show/{volunteer}', 'ActivityController@show');
+                });
 
             });
             Route::post('store', 'VolunteerController@store');
-            Route::get('show/{volunteer}', 'VolunteerController@showSingle');
             Route::get('show', 'VolunteerController@show');
         });
 

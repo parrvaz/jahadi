@@ -15,4 +15,8 @@ class Volunteer extends Model
     public function timing(){
         return $this->belongsTo(Timing::class);
     }
+
+    public function activities(){
+        return $this->hasMany(Activity::class);
+    }
 }

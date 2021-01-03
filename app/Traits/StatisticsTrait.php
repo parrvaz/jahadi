@@ -10,6 +10,7 @@ namespace App\Traits;
 
 
 use Illuminate\Support\Facades\Lang;
+use Morilog\Jalali\Jalalian;
 
 trait StatisticsTrait
 {
@@ -33,5 +34,15 @@ trait StatisticsTrait
             'message' => Lang::get('responses.error.denied'),
             'status' => 'error',
         ],403);
+    }
+
+
+    public function gToJ($date){
+        return Jalalian::forge($date)->format("Y/m/d");
+    }
+
+    public function jToG($date){
+        $date = explode('/',$date);
+        return (new Jalalian($date[0],$date[1],$date[2]))->toCarbon()->toDateTimeString();
     }
 }

@@ -18,7 +18,7 @@ class IsOwnerOfVolunteerMiddleware
      */
     public function handle($request, Closure $next)
     {
-        $volunteer=$request->route('volunteer');
+        $volunteer=$request->route('volunteer') ?? $request->route('activity');
         if ( $volunteer->user->id == auth()->user()->id){
             return $next($request);
         }
