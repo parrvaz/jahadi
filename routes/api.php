@@ -17,18 +17,33 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('v1')->namespace('Api\v1')->group(function () {
     Route::post('register', 'UserController@register');
     Route::post('login', 'UserController@login');
-
-
     Route::middleware('auth:api')->group(function () {
+
         Route::prefix('company')->group(function () {
             Route::middleware('nCompany')->post('store', 'CompanyController@store');
-
             Route::post('update', 'CompanyController@update');
             Route::post('delete', 'CompanyController@destroy');
             Route::get('edit', 'CompanyController@edit')->name('editCompany');
 
             Route::get('show/{company}', 'CompanyController@showSingle');
         });
+
+
+        Route::prefix('volunteer')->group(function () {
+
+            Route::middleware('ownerVolunteer')->group(function (){
+
+                Route::post('update/{volunteer}', 'VolunteerController@update');
+                Route::post('delete/{volunteer}', 'VolunteerController@destroy');
+
+            });
+            Route::post('store', 'VolunteerController@store');
+            Route::get('show/{volunteer}', 'VolunteerController@showSingle');
+            Route::get('show', 'VolunteerController@show');
+        });
+
+
+
     });
 
 });

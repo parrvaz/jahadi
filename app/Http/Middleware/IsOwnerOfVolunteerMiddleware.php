@@ -2,11 +2,13 @@
 
 namespace App\Http\Middleware;
 
+use App\Traits\StatisticsTrait;
 use App\Volunteer;
 use Closure;
 
 class IsOwnerOfVolunteerMiddleware
 {
+    use StatisticsTrait;
     /**
      * Handle an incoming request.
      *
@@ -16,13 +18,11 @@ class IsOwnerOfVolunteerMiddleware
      */
     public function handle($request, Closure $next)
     {
-        $volunteer=Volunteer::find($request->route('volunteer'));
+        $volunteer=$request->route('volunteer');
         if ( $volunteer->user->id == auth()->user()->id){
             return $next($request);
         }
 
-
-        abort(403);
-
+        return $this->permissionDenied();
     }
 }

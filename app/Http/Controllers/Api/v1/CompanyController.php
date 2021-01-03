@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Api\v1;
 use App\Company;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Api\v1\Company\CompanyUpdateValidation;
-use App\Http\Requests\Api\v1\CompanyValidation;
+use App\Http\Requests\Api\v1\Company\CompanyValidation;
 use App\Http\Resources\v1\Company\CompanyResource;
 use App\Traits\StatisticsTrait;
 use Illuminate\Http\Request;

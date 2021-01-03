@@ -19,7 +19,19 @@ trait StatisticsTrait
             'message' => Lang::get('responses.delete.success.company'),
             'status' => 'success',
         ],200);
-
     }
 
+    public function notFoundElementResponse(){
+        return response()->json([
+            'message' => Lang::get('responses.error.null'),
+            'status' => 'error',
+        ],422);
+    }
+
+    public function permissionDenied(){
+        return response()->json([
+            'message' => Lang::get('responses.error.denied'),
+            'status' => 'error',
+        ],403);
+    }
 }
