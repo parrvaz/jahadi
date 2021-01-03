@@ -43,6 +43,8 @@ class CreateGroupsTable extends Migration
      */
     public function down()
     {
+        Schema::dropIfExists('volunteer_group');
+        Schema::dropIfExists('company_group');
         Schema::dropIfExists('groups');
     }
 }

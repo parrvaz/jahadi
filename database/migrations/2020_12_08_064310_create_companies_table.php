@@ -28,7 +28,7 @@ class CreateCompaniesTable extends Migration
             $table->string('picture_url')->nullable();
 
             $table->string('phone')->nullable();
-            $table->string('mobile');
+            $table->string('mobile')->nullable();
 
             $table->string('files_url')->nullable();
             $table->boolean('confirmed')->default(0);
@@ -57,7 +57,8 @@ class CreateCompaniesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('companies');
         Schema::dropIfExists('volunteer_company');
+        Schema::dropIfExists('field_company');
+        Schema::dropIfExists('companies');
     }
 }
