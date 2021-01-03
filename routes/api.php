@@ -19,6 +19,11 @@ Route::prefix('v1')->namespace('Api\v1')->group(function () {
     Route::post('login', 'UserController@login');
     Route::middleware('auth:api')->group(function () {
 
+        Route::prefix('user')->group(function () {
+            Route::get('show', 'UserController@show');
+
+        });
+
         Route::prefix('company')->group(function () {
             Route::middleware('nCompany')->post('store', 'CompanyController@store');
             Route::post('update', 'CompanyController@update');
@@ -26,12 +31,13 @@ Route::prefix('v1')->namespace('Api\v1')->group(function () {
             Route::get('edit', 'CompanyController@edit')->name('editCompany');
 
             Route::get('show/{company}', 'CompanyController@showSingle');
+            Route::get('show', 'CompanyController@show');
         });
 
 
         Route::prefix('volunteer')->group(function () {
 
-            Route::middleware('ownerVolunteer')->group(function (){
+            Route::middleware('owner')->group(function (){
                 Route::post('update/{volunteer}', 'VolunteerController@update');
                 Route::post('delete/{volunteer}', 'VolunteerController@destroy');
                 Route::get('show/{volunteer}', 'VolunteerController@showSingle');
@@ -48,6 +54,20 @@ Route::prefix('v1')->namespace('Api\v1')->group(function () {
             Route::get('show', 'VolunteerController@show');
         });
 
+
+        Route::prefix('group')->group(function () {
+
+            Route::post('store', 'GroupController@store');
+
+            Route::middleware('owner')->group(function () {
+                Route::post('update/{group}', 'GroupController@update');
+
+                Route::post('delete/{group}', 'GroupController@destroy');
+                Route::get('show/{group}', 'GroupController@showSingle');
+            });
+
+            Route::get('show', 'GroupController@show');
+        });
 
 
     });

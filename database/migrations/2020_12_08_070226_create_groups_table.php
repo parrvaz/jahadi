@@ -17,17 +17,16 @@ class CreateGroupsTable extends Migration
             $table->id();
             $table->string('name');
             $table->unsignedTinyInteger('access_level')->default(1);//1:part_1   2:all
-            $table->foreignId('company_id')->references('id')->on('companies')->onDelete('cascade');
+            $table->foreignId('owner_company_id')->references('id')->on('companies')->onDelete('cascade');
             $table->text('description')->nullable();
             $table->timestamps();
         });
 
-        Schema::create('volunteer_group', function (Blueprint $table) {
+        Schema::create('group_volunteer', function (Blueprint $table) {
             $table->foreignId('volunteer_id')->references('id')->on('volunteers')->onDelete('cascade');
             $table->foreignId('group_id')->references('id')->on('groups')->onDelete('cascade');
             $table->primary(['volunteer_id','group_id']);
         });
-
 
         Schema::create('company_group', function (Blueprint $table) {
             $table->foreignId('company_id')->references('id')->on('companies')->onDelete('cascade');

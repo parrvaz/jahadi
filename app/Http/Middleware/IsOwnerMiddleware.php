@@ -6,7 +6,7 @@ use App\Traits\StatisticsTrait;
 use App\Volunteer;
 use Closure;
 
-class IsOwnerOfVolunteerMiddleware
+class IsOwnerMiddleware
 {
     use StatisticsTrait;
     /**
@@ -18,8 +18,8 @@ class IsOwnerOfVolunteerMiddleware
      */
     public function handle($request, Closure $next)
     {
-        $volunteer=$request->route('volunteer') ?? $request->route('activity');
-        if ( $volunteer->user->id == auth()->user()->id){
+        $item=$request->route('volunteer') ?? $request->route('activity') ?? $request->route('group');
+        if ( $item->user->id == auth()->user()->id){
             return $next($request);
         }
 

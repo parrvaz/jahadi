@@ -15,6 +15,7 @@ class TimingResource extends JsonResource
     public function toArray($request)
     {
         return [
+            'id'=>$this->id,
             'type'=>$this->type,
             'period'=>$this->period,
             'number'=>$this->number,

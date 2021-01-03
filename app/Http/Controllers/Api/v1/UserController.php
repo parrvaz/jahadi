@@ -71,4 +71,8 @@ class UserController extends Controller
 
 
     }
+
+    public function show(){
+        return auth()->user();
+    }
 }

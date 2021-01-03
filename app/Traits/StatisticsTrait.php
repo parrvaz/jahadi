@@ -9,11 +9,22 @@
 namespace App\Traits;
 
 
+use App\Volunteer;
 use Illuminate\Support\Facades\Lang;
 use Morilog\Jalali\Jalalian;
 
 trait StatisticsTrait
 {
+
+    public function ownerVolunteer($volunteersId){
+        foreach ($volunteersId as $vol){
+            $volunteer = Volunteer::find($vol['id']);
+            if (($volunteer->user->id ?? 0) != auth()->user()->id)
+                return false;
+        }
+        return true;
+    }
+
 
     public function deleteResponse(){
         return response()->json([
