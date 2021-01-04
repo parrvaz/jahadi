@@ -3,13 +3,17 @@
 
 namespace App\Http\Controllers\Api\v1;
 
+use App\Company;
 use App\Group;
 use App\Http\Controllers\Controller;
 
 use App\Http\Requests\Api\v1\Group\GroupValidation;
 use App\Http\Resources\v1\Group\GroupCollection;
 use App\Http\Resources\v1\Group\GroupResource;
+use App\Http\Resources\v1\Volunteer\LevelResource;
+use App\Http\Resources\v1\Volunteer\VolunteerCollection;
 use App\Traits\StatisticsTrait;
+use App\Volunteer;
 use Illuminate\Http\Request;
 
 class GroupController extends Controller
@@ -62,6 +66,32 @@ class GroupController extends Controller
         $groups = auth()->user()->company->groups()->get();
         return new GroupCollection($groups);
     }
+
+    public function volunteerShow(){
+        //groups join in
+
+        $volunteers = collect();
+        $groups = auth()->user()->company->member_groups()->get();
+        foreach ($groups as $group){
+             $volunteers = $volunteers->merge($group->volunteers()->get());
+        }
+
+        return new VolunteerCollection($volunteers);
+    }
+
+    public function volunteerShowSingle(Volunteer $volunteer){
+        //groups join in
+
+        $accessLevel = auth()->user()->company->member_groups()
+            ->whereIn('id',$volunteer->groups()->pluck('id'))->max('access_level');
+
+        if ($accessLevel==null)
+            return $this->permissionDenied();
+
+        $volunteer->public_show = $accessLevel;
+        return new LevelResource($volunteer);
+    }
+
 
     public function destroy(Group $group){
         $group->delete();

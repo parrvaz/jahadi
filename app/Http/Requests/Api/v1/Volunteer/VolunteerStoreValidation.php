@@ -31,7 +31,7 @@ class VolunteerStoreValidation extends FormRequest
             'social_media'=>'string|min:2|max:255',
             'fax'=>'string|min:2|max:255',
             'description'=>'string|min:2|max:255',
-            'public_show'=>'in:1,2,3',
+            'public_show'=>'in:0,1,2,3',
 
             'type'=>'required|boolean',
             'period'=>'required|in:1,2,3,4',

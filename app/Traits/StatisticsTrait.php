@@ -33,6 +33,14 @@ trait StatisticsTrait
         ],200);
     }
 
+    public function successResponse(){
+        return response()->json([
+            'message' => Lang::get('responses.success'),
+            'status' => 'success',
+        ],200);
+    }
+
+
     public function notFoundElementResponse(){
         return response()->json([
             'message' => Lang::get('responses.error.null'),
@@ -48,6 +56,13 @@ trait StatisticsTrait
     }
 
 
+    public function unConfirmed(){
+        return response()->json([
+            'message' => Lang::get('responses.error.unconfirmed'),
+            'status' => 'error',
+        ],403);
+    }
+
     public function gToJ($date){
         return Jalalian::forge($date)->format("Y/m/d");
     }
@@ -56,4 +71,6 @@ trait StatisticsTrait
         $date = explode('/',$date);
         return (new Jalalian($date[0],$date[1],$date[2]))->toCarbon()->toDateTimeString();
     }
+
+
 }

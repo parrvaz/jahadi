@@ -5,7 +5,6 @@ namespace App\Http\Resources\v1\Group;
 use App\Http\Resources\v1\Company\CompanyCollection;
 use App\Http\Resources\v1\Volunteer\VolunteerCollection;
 use Illuminate\Http\Resources\Json\JsonResource;
-use mysql_xdevapi\Collection;
 
 class GroupResource extends JsonResource
 {

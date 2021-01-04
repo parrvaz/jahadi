@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use App\Traits\StatisticsTrait;
 use Closure;
 
-class NCompanyMiddleware
+class storeVolunteerMiddleware
 {
     use StatisticsTrait;
     /**
@@ -17,9 +17,8 @@ class NCompanyMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if (count(auth()->user()->company()->get())>0 || auth()->user()->type==1)
+        if (auth()->user()->type == 1 && auth()->user()->volunteer !=null)
             return $this->permissionDenied();
-
         return $next($request);
     }
 }

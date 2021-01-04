@@ -23,11 +23,11 @@ class VolunteerCollection extends ResourceCollection
                   'name'=>$item->name,
                   'profession'=>$item->profession,
                   'timing'=> new TimingResource(Timing::find($item->timing_id)),
-                  'mobile'=>$item->mobile,
-                  'phone'=>$item->phone,
-                  'social_media'=>$item->social_media,
-                  'fax'=>$item->fax,
-                  'description'=>$item->description,
+//                  'mobile'=>$item->mobile,
+//                  'phone'=>$item->phone,
+//                  'social_media'=>$item->social_media,
+//                  'fax'=>$item->fax,
+//                  'description'=>$item->description,
               ];
             })
         ];

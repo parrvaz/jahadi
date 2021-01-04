@@ -15,4 +15,8 @@ class Company extends Model
     public function groups(){
         return $this->hasMany(Group::class,'owner_company_id');
     }
+
+    public function member_groups(){
+        return $this->belongsToMany(Group::class);
+    }
 }

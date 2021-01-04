@@ -17,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','mobile','api_token'
+        'name', 'email', 'password','mobile','api_token','type'
     ];
 
     /**
@@ -45,5 +45,9 @@ class User extends Authenticatable
 
     public function volunteers(){
         return $this->hasMany(Volunteer::class);
+    }
+
+    public function volunteer(){
+        return $this->hasOne(Volunteer::class);
     }
 }

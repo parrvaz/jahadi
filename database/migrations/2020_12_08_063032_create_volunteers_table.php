@@ -20,14 +20,14 @@ class CreateVolunteersTable extends Migration
             $table->string('name');
             $table->string('profession');
             $table->foreignId('timing_id')->references('id')->on('timings');
+            $table->string('picture_url')->nullable();
 
             $table->string('mobile');
             $table->string('phone')->nullable();
             $table->string('social_media')->nullable();
             $table->string('fax')->nullable();
-            $table->text('activity_history')->nullable();
             $table->text('description')->nullable();
-            $table->string('picture_url')->nullable();
+            $table->text('activity_history')->nullable();
 
             $table->unsignedTinyInteger('public_show')->default(1);//0:anything 1:part_1   2:part_1 and 2 3:all(include activities)
 

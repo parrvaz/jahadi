@@ -27,7 +27,7 @@ class GroupValidation extends FormRequest
     {
         return [
             'name' => 'required|string|min:2|max:255',
-            'access_level' => 'required|boolean',
+            'access_level' => 'required|in:1,2,3',
             'description' => 'string|min:2|max:255',
 
             'companies'=>'required|array|min:1',

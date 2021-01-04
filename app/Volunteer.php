@@ -19,4 +19,8 @@ class Volunteer extends Model
     public function activities(){
         return $this->hasMany(Activity::class);
     }
+
+    public function groups(){
+        return $this->belongsToMany(Group::class);
+    }
 }

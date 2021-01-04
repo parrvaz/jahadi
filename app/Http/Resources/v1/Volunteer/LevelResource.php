@@ -7,7 +7,7 @@ use App\Http\Resources\v1\Timing\TimingResource;
 use App\Timing;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class VolunteerResource extends JsonResource
+class LevelResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -17,18 +17,36 @@ class VolunteerResource extends JsonResource
      */
     public function toArray($request)
     {
-        return [
+        $part1 = [
             'id'=>$this->id,
             'name'=>$this->name,
             'profession'=>$this->profession,
             'timing'=> new TimingResource(Timing::find($this->timing_id)),
+            'public_show'=>$this->public_show
+        ];
+
+        $part2 =[
             'mobile'=>$this->mobile,
             'phone'=>$this->phone,
             'social_media'=>$this->social_media,
             'fax'=>$this->fax,
             'description'=>$this->description,
-            'activity'=>new ActivityCollection($this->activities),
-            'public_show'=>3
         ];
+
+        $part3=[
+            'activity'=>new ActivityCollection($this->activities),
+        ];
+
+        $result=[];
+        switch ($this->public_show){
+            case 3:
+                $result = array_merge($result,$part3);
+            case 2:
+                $result = array_merge($result,$part2);
+            case 1:
+                $result = array_merge($result,$part1);
+        }
+
+        return $result;
     }
 }

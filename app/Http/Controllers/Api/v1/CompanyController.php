@@ -8,6 +8,7 @@ use App\Http\Requests\Api\v1\Company\CompanyUpdateValidation;
 use App\Http\Requests\Api\v1\Company\CompanyValidation;
 use App\Http\Resources\v1\Company\CompanyCollection;
 use App\Http\Resources\v1\Company\CompanyResource;
+use App\Http\Resources\v1\Volunteer\VolunteerCollection;
 use App\Traits\StatisticsTrait;
 use Illuminate\Http\Request;
 
@@ -40,6 +41,22 @@ class CompanyController extends Controller
         $companies =Company::where('public_show','!=',0)->get();
         return new CompanyCollection($companies);
     }
+
+    public function confirm(Company $company){
+        $company->update([
+            'confirmed'=>true
+        ]);
+
+        return $this->successResponse();
+    }
+    public function unconfirmed(Company $company){
+        $company->update([
+            'confirmed'=>false
+        ]);
+        return $this->successResponse();
+
+    }
+
 
 
     public function destroy(){

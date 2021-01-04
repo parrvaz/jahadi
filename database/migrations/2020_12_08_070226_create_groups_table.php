@@ -16,7 +16,7 @@ class CreateGroupsTable extends Migration
         Schema::create('groups', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->unsignedTinyInteger('access_level')->default(1);//1:part_1   2:all
+            $table->unsignedTinyInteger('access_level')->default(1);//1:part_1   2:part_1 and 2 3:all(include activities)
             $table->foreignId('owner_company_id')->references('id')->on('companies')->onDelete('cascade');
             $table->text('description')->nullable();
             $table->timestamps();
@@ -42,7 +42,7 @@ class CreateGroupsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('volunteer_group');
+        Schema::dropIfExists('group_volunteer');
         Schema::dropIfExists('company_group');
         Schema::dropIfExists('groups');
     }
