@@ -37,6 +37,8 @@ class CompanyValidation extends FormRequest
             'mobile'=>'digits:11',
             'public_show'=>'required|in:0,1,2',
 
+            'fields'=> 'array|min:0|distinct|exists:fields,id'
+
         ];
     }
 }

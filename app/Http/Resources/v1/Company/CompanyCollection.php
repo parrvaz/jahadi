@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources\v1\Company;
 
+use App\Http\Resources\v1\Field\FieldCollection;
 use Illuminate\Http\Resources\Json\ResourceCollection;
 
 class CompanyCollection extends ResourceCollection
@@ -21,6 +22,7 @@ class CompanyCollection extends ResourceCollection
                     'id'=>$item->id,
                     'user_id'=>$item->user_id,
                     'name'=>$item->name,
+                    'fields'=> new FieldCollection($item->fields()->get()),
                     'state'=>$item->state,
                     'city'=>$item->city,
                     'description'=>$item->description,

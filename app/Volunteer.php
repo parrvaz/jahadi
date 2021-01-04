@@ -23,4 +23,9 @@ class Volunteer extends Model
     public function groups(){
         return $this->belongsToMany(Group::class);
     }
+    public function fields(){
+        return $this->belongsToMany(Field::class);
+    }
+
+
 }

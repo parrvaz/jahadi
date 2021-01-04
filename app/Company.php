@@ -19,4 +19,8 @@ class Company extends Model
     public function member_groups(){
         return $this->belongsToMany(Group::class);
     }
+
+    public function fields(){
+        return $this->belongsToMany(Field::class);
+    }
 }

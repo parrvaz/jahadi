@@ -19,7 +19,17 @@ class CompanyController extends Controller
 
 
     public function store(CompanyValidation $companyValidation){
-        $company= auth()->user()->company()->create($companyValidation->validated());
+
+        $fields = $companyValidation['fields'];
+        $validated = $companyValidation->validated();
+        unset($validated['fields']);
+
+
+        $company= auth()->user()->company()->create($validated);
+
+        //fields
+        $this->increaseFieldCount($fields,$company);
+
         return new CompanyResource($company);
     }
 
@@ -28,7 +38,18 @@ class CompanyController extends Controller
     }
 
     public function update(CompanyUpdateValidation $validation){
-        auth()->user()->company()->update($validation->validated());
+        $fields = $validation['fields'];
+        $validated = $validation->validated();
+        unset($validated['fields']);
+
+
+        $company =auth()->user()->company;
+
+        $this->decreaseFieldCount($company);
+        $company->update($validated);
+
+        $this->increaseFieldCount($fields,$company);
+
         return new CompanyResource(auth()->user()->company);
     }
 
@@ -60,7 +81,9 @@ class CompanyController extends Controller
 
 
     public function destroy(){
-        auth()->user()->company->delete();
+        $company = auth()->user()->company;
+            $this->decreaseFieldCount($company);
+            $company->delete();
 
         return $this->deleteResponse();
     }

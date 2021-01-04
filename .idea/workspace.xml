@@ -2,26 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="df622290-7431-4c4b-84c4-17b638443438" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Company.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Company.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/v1/CompanyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/v1/CompanyController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/v1/FieldController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/v1/FieldController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/v1/GroupController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/v1/GroupController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/v1/VolunteerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/v1/VolunteerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/NCompanyMiddleware.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/NCompanyMiddleware.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Api/v1/Group/GroupValidation.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Api/v1/Group/GroupValidation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Api/v1/Company/CompanyUpdateValidation.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Api/v1/Company/CompanyUpdateValidation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Api/v1/Company/CompanyValidation.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Api/v1/Company/CompanyValidation.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Requests/Api/v1/Volunteer/VolunteerStoreValidation.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Api/v1/Volunteer/VolunteerStoreValidation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/v1/Group/GroupResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/v1/Group/GroupResource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/v1/Company/CompanyCollection.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/v1/Company/CompanyCollection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/v1/Company/CompanyResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/v1/Company/CompanyResource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/v1/Volunteer/LevelResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/v1/Volunteer/LevelResource.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Resources/v1/Volunteer/VolunteerCollection.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/v1/Volunteer/VolunteerCollection.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Resources/v1/Volunteer/VolunteerResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/v1/Volunteer/VolunteerResource.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Traits/StatisticsTrait.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Traits/StatisticsTrait.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Volunteer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Volunteer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_08_063032_create_volunteers_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_08_063032_create_volunteers_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_08_070226_create_groups_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_08_070226_create_groups_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/fa/responses.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/fa/responses.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_08_064310_create_companies_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_08_064310_create_companies_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,65 +31,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/v1/GroupController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="91" column="26" selection-start-line="91" selection-start-column="26" selection-end-line="91" selection-end-column="26" />
-              <folding>
-                <element signature="e#48#64#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Volunteer.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="318">
-              <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/api.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="74" column="49" selection-start-line="74" selection-start-column="49" selection-end-line="74" selection-end-column="49" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Requests/Api/v1/Group/GroupValidation.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="29" column="48" selection-start-line="29" selection-start-column="48" selection-end-line="29" selection-end-column="48" />
-              <folding>
-                <element signature="e#50#81#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Traits/StatisticsTrait.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
-              <caret line="74" selection-start-line="74" selection-end-line="74" />
-              <folding>
-                <element signature="e#112#130#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/v1/VolunteerController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="74" selection-start-line="74" selection-end-line="74" />
+            <state relative-caret-position="139">
+              <caret line="106" column="46" selection-start-line="106" selection-start-column="46" selection-end-line="106" selection-end-column="46" />
               <folding>
                 <element signature="e#48#84#0#PHP" expanded="true" />
               </folding>
@@ -101,28 +44,46 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Company.php">
+        <entry file="file://$PROJECT_DIR$/app/Http/Resources/v1/Field/FieldCollection.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="318">
-              <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+            <state relative-caret-position="17">
+              <caret line="5" selection-start-line="5" selection-end-line="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Resources/v1/Company/CompanyCollection.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="113">
+              <caret line="24" column="56" selection-start-line="24" selection-start-column="56" selection-end-line="24" selection-end-column="56" />
+              <folding>
+                <element signature="e#49#97#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2020_12_08_070226_create_groups_table.php">
+        <entry file="file://$PROJECT_DIR$/app/Http/Resources/v1/Company/CompanyResource.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="97">
-              <caret line="18" column="121" selection-start-line="18" selection-start-column="121" selection-end-line="18" selection-end-column="121" />
+            <state relative-caret-position="206">
+              <caret line="21" column="38" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
+              <folding>
+                <element signature="e#49#97#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2020_12_08_063032_create_volunteers_table.php">
+        <entry file="file://$PROJECT_DIR$/app/Http/Resources/v1/Volunteer/LevelResource.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="31" column="131" selection-start-line="31" selection-start-column="80" selection-end-line="31" selection-end-column="131" />
+            <state relative-caret-position="187">
+              <caret line="25" selection-start-line="25" selection-end-line="26" />
+              <folding>
+                <element signature="e#51#105#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -130,10 +91,49 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/v1/CompanyController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="59" selection-start-line="59" selection-end-line="59" />
+            <state relative-caret-position="156">
+              <caret line="84" column="31" selection-start-line="84" selection-start-column="31" selection-end-line="84" selection-end-column="31" />
               <folding>
                 <element signature="e#47#63#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2019_08_19_000000_create_failed_jobs_table.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="21" column="9" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2020_12_08_062507_create_fields_table.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="80">
+              <caret line="19" column="10" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2020_12_08_064310_create_companies_table.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="332">
+              <caret line="60" column="43" selection-start-line="60" selection-start-column="43" selection-end-line="60" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Traits/StatisticsTrait.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="241">
+              <caret line="89" column="23" selection-start-line="89" selection-start-column="23" selection-end-line="89" selection-end-column="23" />
+              <folding>
+                <element signature="e#112#126#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -175,13 +175,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Http/Requests/Api/v1/RegisterValidation.php" />
-        <option value="$PROJECT_DIR$/config/auth.php" />
-        <option value="$PROJECT_DIR$/app/Http/Requests/Api/v1/CompanyValidation.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2020_12_08_064310_create_companies_table.php" />
-        <option value="$PROJECT_DIR$/app/Http/Requests/Api/v1/Company/CompanyUpdateValidation.php" />
-        <option value="$PROJECT_DIR$/app/Http/Middleware/IsOwnerOfCompany.php" />
-        <option value="$PROJECT_DIR$/app/Http/Requests/Api/v1/Company/CompanyValidation.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/Api/v1/Volunteer/VolunteerUpdateValidation.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/Api/v1/ActivitiesValidation.php" />
         <option value="$PROJECT_DIR$/app/Http/Resources/v1/Activity/ActivityCollection.php" />
@@ -193,8 +186,6 @@
         <option value="$PROJECT_DIR$/app/Http/Middleware/IsOwnerOfVolunteerMiddleware.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/Api/v1/Group/GroupCompanyValidation.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/v1/UserController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Resources/v1/Company/CompanyResource.php" />
-        <option value="$PROJECT_DIR$/app/Http/Resources/v1/Company/CompanyCollection.php" />
         <option value="$PROJECT_DIR$/app/Group.php" />
         <option value="$PROJECT_DIR$/app/Http/Middleware/IsOwnerMiddleware.php" />
         <option value="$PROJECT_DIR$/app/Http/Resources/v1/Group/GroupResource.php" />
@@ -210,22 +201,31 @@
         <option value="$PROJECT_DIR$/app/Http/Middleware/confitmedMiddleware.php" />
         <option value="$PROJECT_DIR$/app/Http/Middleware/confirmedMiddleware.php" />
         <option value="$PROJECT_DIR$/resources/lang/fa/responses.php" />
-        <option value="$PROJECT_DIR$/app/Http/Resources/v1/Volunteer/VolunteerResource.php" />
         <option value="$PROJECT_DIR$/database/migrations/2020_12_08_063032_create_volunteers_table.php" />
         <option value="$PROJECT_DIR$/app/Http/Resources/v1/Volunteer/LevelResourse.php" />
-        <option value="$PROJECT_DIR$/app/Http/Resources/v1/Volunteer/LevelResource.php" />
-        <option value="$PROJECT_DIR$/app/Http/Resources/v1/Volunteer/VolunteerCollection.php" />
-        <option value="$PROJECT_DIR$/app/Http/Requests/Api/v1/Volunteer/VolunteerStoreValidation.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Api/v1/VolunteerController.php" />
         <option value="$PROJECT_DIR$/app/Http/Kernel.php" />
-        <option value="$PROJECT_DIR$/app/Traits/StatisticsTrait.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Api/v1/CompanyController.php" />
-        <option value="$PROJECT_DIR$/app/Company.php" />
-        <option value="$PROJECT_DIR$/app/Volunteer.php" />
         <option value="$PROJECT_DIR$/routes/api.php" />
         <option value="$PROJECT_DIR$/database/migrations/2020_12_08_070226_create_groups_table.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/Api/v1/Group/GroupValidation.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/v1/GroupController.php" />
+        <option value="$PROJECT_DIR$/database/seeds/FieldSeeder.php" />
+        <option value="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
+        <option value="$PROJECT_DIR$/app/Http/Requests/Api/v1/Volunteer/VolunteerStoreValidation.php" />
+        <option value="$PROJECT_DIR$/app/Volunteer.php" />
+        <option value="$PROJECT_DIR$/app/Http/Resources/v1/Field/FieldCollection.php" />
+        <option value="$PROJECT_DIR$/app/Http/Resources/v1/Volunteer/LevelResource.php" />
+        <option value="$PROJECT_DIR$/app/Http/Resources/v1/Volunteer/VolunteerResource.php" />
+        <option value="$PROJECT_DIR$/app/Http/Resources/v1/Volunteer/VolunteerCollection.php" />
+        <option value="$PROJECT_DIR$/app/Http/Requests/Api/v1/Company/CompanyValidation.php" />
+        <option value="$PROJECT_DIR$/app/Http/Requests/Api/v1/Company/CompanyUpdateValidation.php" />
+        <option value="$PROJECT_DIR$/app/Company.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Api/v1/FieldController.php" />
+        <option value="$PROJECT_DIR$/app/Traits/StatisticsTrait.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2020_12_08_064310_create_companies_table.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Api/v1/CompanyController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Api/v1/VolunteerController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Resources/v1/Company/CompanyResource.php" />
+        <option value="$PROJECT_DIR$/app/Http/Resources/v1/Company/CompanyCollection.php" />
       </list>
     </option>
   </component>
@@ -444,6 +444,16 @@
               <item name="Requests" type="462c0819:PsiDirectoryNode" />
               <item name="Api" type="462c0819:PsiDirectoryNode" />
               <item name="v1" type="462c0819:PsiDirectoryNode" />
+              <item name="Company" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jahadi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jahadi" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Requests" type="462c0819:PsiDirectoryNode" />
+              <item name="Api" type="462c0819:PsiDirectoryNode" />
+              <item name="v1" type="462c0819:PsiDirectoryNode" />
               <item name="Group" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -477,6 +487,15 @@
               <item name="Http" type="462c0819:PsiDirectoryNode" />
               <item name="Resources" type="462c0819:PsiDirectoryNode" />
               <item name="v1" type="462c0819:PsiDirectoryNode" />
+              <item name="Field" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jahadi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jahadi" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Resources" type="462c0819:PsiDirectoryNode" />
+              <item name="v1" type="462c0819:PsiDirectoryNode" />
               <item name="Volunteer" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -495,6 +514,12 @@
               <item name="jahadi" type="462c0819:PsiDirectoryNode" />
               <item name="database" type="462c0819:PsiDirectoryNode" />
               <item name="migrations" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jahadi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jahadi" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="seeds" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="jahadi" type="b2602c69:ProjectViewProjectNode" />
@@ -558,12 +583,12 @@
       <workItem from="1607535887290" duration="755000" />
       <workItem from="1609613895004" duration="2359000" />
       <workItem from="1609645832911" duration="35214000" />
-      <workItem from="1609746460164" duration="10993000" />
+      <workItem from="1609746460164" duration="16146000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63092000" />
+    <option name="totallyTimeSpent" value="68245000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -584,7 +609,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50067115" side_tool="true" weight="0.23087819" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49932885" visible="true" weight="0.43342775" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49932885" visible="true" weight="0.41359773" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -595,57 +620,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Http/Requests/Api/v1/Volunteer/VolunteerUpdateValidation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="461">
-          <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2020_12_08_062507_create_fields_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="20" column="11" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2020_12_08_065954_create_activities_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Requests/Api/v1/LoginValidation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="26" column="49" selection-start-line="26" selection-start-column="49" selection-end-line="26" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/v1/ActivityController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="41" column="39" selection-start-line="41" selection-start-column="39" selection-end-line="41" selection-end-column="39" />
-          <folding>
-            <element signature="e#47#64#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Timing.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Field.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Requests/Api/v1/ActivitiesValidation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="27" column="8" selection-start-line="27" selection-start-column="8" selection-end-line="28" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Resources/v1/Group/GroupCollection.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -694,20 +668,6 @@
           <folding>
             <element signature="e#47#96#0#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Resources/v1/Company/CompanyResource.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="18" selection-start-line="18" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Resources/v1/Company/CompanyCollection.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="79">
-          <caret line="21" column="36" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -773,13 +733,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2020_12_08_064310_create_companies_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Middleware/hasCompanyMiddleware.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -841,43 +794,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Resources/v1/Volunteer/VolunteerResource.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="29" column="28" lean-forward="true" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
-          <folding>
-            <element signature="e#51#105#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Resources/v1/Volunteer/LevelResource.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="14" column="34" lean-forward="true" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
-          <folding>
-            <element signature="e#51#105#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Resources/v1/Volunteer/VolunteerCollection.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="29" column="7" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
-          <folding>
-            <element signature="e#51#99#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Requests/Api/v1/Volunteer/VolunteerStoreValidation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="33" column="33" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Middleware/confirmedMiddleware.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="63">
@@ -895,50 +811,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Traits/StatisticsTrait.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="74" selection-start-line="74" selection-end-line="74" />
-          <folding>
-            <element signature="e#112#130#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/v1/CompanyController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="59" selection-start-line="59" selection-end-line="59" />
-          <folding>
-            <element signature="e#47#63#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/v1/VolunteerController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="74" selection-start-line="74" selection-end-line="74" />
-          <folding>
-            <element signature="e#48#84#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Company.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Volunteer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/api.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -950,13 +822,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="97">
           <caret line="18" column="121" selection-start-line="18" selection-start-column="121" selection-end-line="18" selection-end-column="121" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2020_12_08_063032_create_volunteers_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="31" column="131" selection-start-line="31" selection-start-column="80" selection-end-line="31" selection-end-column="131" />
         </state>
       </provider>
     </entry>
@@ -972,10 +837,184 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/v1/GroupController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="91" column="26" selection-start-line="91" selection-start-column="26" selection-end-line="91" selection-end-column="26" />
+        <state relative-caret-position="131">
+          <caret line="83" selection-start-line="83" selection-end-line="83" />
           <folding>
             <element signature="e#48#64#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2020_12_08_063032_create_volunteers_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/seeds/FieldSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
+          <folding>
+            <element signature="e#7#38#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/seeds/DatabaseSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="31" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Resources/v1/Volunteer/VolunteerCollection.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="26" column="54" selection-start-line="26" selection-start-column="54" selection-end-line="26" selection-end-column="54" />
+          <folding>
+            <element signature="e#51#99#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Resources/v1/Volunteer/VolunteerResource.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="25" column="42" selection-start-line="25" selection-start-column="42" selection-end-line="25" selection-end-column="42" />
+          <folding>
+            <element signature="e#51#105#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/Api/v1/Volunteer/VolunteerStoreValidation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="39" selection-start-line="39" selection-end-line="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/Api/v1/Company/CompanyValidation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/Api/v1/Company/CompanyUpdateValidation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Volunteer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="27" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Company.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/v1/FieldController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Traits/StatisticsTrait.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="89" column="23" selection-start-line="89" selection-start-column="23" selection-end-line="89" selection-end-column="23" />
+          <folding>
+            <element signature="e#112#126#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_08_19_000000_create_failed_jobs_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="21" column="9" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2020_12_08_062507_create_fields_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="19" column="10" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2020_12_08_064310_create_companies_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="60" column="43" selection-start-line="60" selection-start-column="43" selection-end-line="60" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/v1/CompanyController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="84" column="31" selection-start-line="84" selection-start-column="31" selection-end-line="84" selection-end-column="31" />
+          <folding>
+            <element signature="e#47#63#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/v1/VolunteerController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="106" column="46" selection-start-line="106" selection-start-column="46" selection-end-line="106" selection-end-column="46" />
+          <folding>
+            <element signature="e#48#84#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Resources/v1/Field/FieldCollection.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Resources/v1/Volunteer/LevelResource.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="25" selection-start-line="25" selection-end-line="26" />
+          <folding>
+            <element signature="e#51#105#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Resources/v1/Company/CompanyResource.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="21" column="38" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
+          <folding>
+            <element signature="e#49#97#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Resources/v1/Company/CompanyCollection.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="24" column="56" selection-start-line="24" selection-start-column="56" selection-end-line="24" selection-end-column="56" />
+          <folding>
+            <element signature="e#49#97#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

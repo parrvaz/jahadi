@@ -80,8 +80,6 @@ class GroupController extends Controller
     }
 
     public function volunteerShowSingle(Volunteer $volunteer){
-        //groups join in
-
         $accessLevel = auth()->user()->company->member_groups()
             ->whereIn('id',$volunteer->groups()->pluck('id'))->max('access_level');
 

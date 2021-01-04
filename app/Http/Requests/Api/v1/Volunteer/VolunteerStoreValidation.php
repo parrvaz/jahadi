@@ -37,6 +37,7 @@ class VolunteerStoreValidation extends FormRequest
             'period'=>'required|in:1,2,3,4',
             'number'=>'required|integer|min:1|max:50',
 
+            'fields'=> 'array|min:0|distinct|exists:fields,id'
         ];
     }
 }

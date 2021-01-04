@@ -43,7 +43,7 @@ class CreateCompaniesTable extends Migration
             $table->foreignId('company_id')->references('id')->on('companies')->onDelete('cascade');
             $table->primary(['volunteer_id','company_id']);
         });
-        Schema::create('field_company', function (Blueprint $table) {
+        Schema::create('company_field', function (Blueprint $table) {
             $table->foreignId('field_id')->references('id')->on('fields')->onDelete('cascade');
             $table->foreignId('company_id')->references('id')->on('companies')->onDelete('cascade');
             $table->primary(['field_id','company_id']);
@@ -58,7 +58,7 @@ class CreateCompaniesTable extends Migration
     public function down()
     {
         Schema::dropIfExists('volunteer_company');
-        Schema::dropIfExists('field_company');
+        Schema::dropIfExists('company_field');
         Schema::dropIfExists('companies');
     }
 }

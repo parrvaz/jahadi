@@ -9,6 +9,7 @@
 namespace App\Traits;
 
 
+use App\Field;
 use App\Volunteer;
 use Illuminate\Support\Facades\Lang;
 use Morilog\Jalali\Jalalian;
@@ -72,5 +73,22 @@ trait StatisticsTrait
         return (new Jalalian($date[0],$date[1],$date[2]))->toCarbon()->toDateTimeString();
     }
 
+    public function increaseFieldCount($fields,$item){
+        $item->fields()->attach($fields);
+        foreach ($fields as $field){
+            $field = Field::find($field);
+            $field->update(['count'=> $field->count +1 ]);
+        }
+    }
+    public function decreaseFieldCount($item){
+
+
+        foreach ($item->fields()->get() as $field){
+            $field->update(['count'=> $field->count -1 ]);
+        }
+
+        $item->fields()->detach();
+
+    }
 
 }

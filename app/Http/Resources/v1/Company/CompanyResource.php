@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources\v1\Company;
 
+use App\Http\Resources\v1\Field\FieldCollection;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class CompanyResource extends JsonResource
@@ -18,6 +19,8 @@ class CompanyResource extends JsonResource
             'id'=>$this->id,
             'user_id'=>$this->user_id,
             'name'=>$this->name,
+            'fields'=> new FieldCollection($this->fields()->get()),
+
             'state'=>$this->state,
             'city'=>$this->city,
             'description'=>$this->description,

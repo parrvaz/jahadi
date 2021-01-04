@@ -9,5 +9,4 @@ use Illuminate\Http\Request;
 
 class FieldController extends Controller
 {
-    //
 }

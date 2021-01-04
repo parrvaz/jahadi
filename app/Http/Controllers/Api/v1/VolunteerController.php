@@ -14,7 +14,6 @@ use App\Timing;
 use App\Traits\StatisticsTrait;
 use App\User;
 use App\Volunteer;
-use Illuminate\Http\Request;
 
 class VolunteerController extends Controller
 {
@@ -43,10 +42,14 @@ class VolunteerController extends Controller
         if (auth()->user()->company == null)
             auth()->user()->update(['type'=> true]);
 
+        $this->increaseFieldCount($validation['fields'], $volunteer);
         return new VolunteerResource($volunteer);
     }
 
     public function update(VolunteerStoreValidation $validation,Volunteer $volunteer){
+
+        //fields
+        $this->decreaseFieldCount($volunteer);
 
         $volunteer->timing()->update([
             'type'=>$validation['type'],
@@ -64,6 +67,9 @@ class VolunteerController extends Controller
             'description'=>$validation['description'],
             'public_show'=>$validation['public_show'],
         ]);
+
+        //fields
+        $this->increaseFieldCount($validation['fields'],$volunteer);
 
         return new VolunteerResource($volunteer);
     }
@@ -98,6 +104,8 @@ class VolunteerController extends Controller
         }
     }
     public function destroy(Volunteer $volunteer){
+        $this->decreaseFieldCount($volunteer);
+
         $volunteer->delete();
 
         if (auth()->user()->company == null)
