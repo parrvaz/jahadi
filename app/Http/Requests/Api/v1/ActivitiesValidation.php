@@ -24,8 +24,10 @@ class ActivitiesValidation extends FormRequest
     public function rules()
     {
         return [
-            'date'=>'required|date_format:Y/m/d',
-            'description' => 'required|string|min:2|max:255',
+            'date'=>'required|date',
+            'description' => 'nullable|string|min:2|max:255',
+            'hour' => 'required|integer|min:1|max:10',
+
         ];
     }
 }

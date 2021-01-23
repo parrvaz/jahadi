@@ -17,36 +17,37 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('v1')->namespace('Api\v1')->group(function () {
     Route::post('register', 'UserController@register');
     Route::post('login', 'UserController@login');
+
+    Route::get('fields', 'FieldController@show');
+
     Route::middleware('auth:api')->group(function () {
-
-        Route::middleware('admin')->prefix('user')->group(function () {
-            Route::get('show', 'UserController@show');
-
-        });
 
         Route::prefix('company')->group(function () {
             Route::get('show', 'CompanyController@show');
+            Route::get('show/{company}', 'CompanyController@showSingle');
 
             Route::middleware('nCompany')->post('store', 'CompanyController@store');
             Route::middleware('hasCompany')->group(function () {
                 Route::post('update', 'CompanyController@update');
                 Route::post('delete', 'CompanyController@destroy');
-                Route::get('edit', 'CompanyController@edit')->name('editCompany');
-
-                Route::get('show/{company}', 'CompanyController@showSingle');
-
+                Route::get('showSelf', 'CompanyController@showSelf');
 
                 Route::get('volunteer/show', 'VolunteerController@showPublic');
                 Route::get('volunteer/show/{volunteer}', 'VolunteerController@showPublicSingle');
-
-
-
             });
-
         });
 
 
+
+
+
         Route::prefix('volunteer')->group(function () {
+            Route::middleware('storeVolunteer')->post('store', 'VolunteerController@store');
+            Route::get('show', 'VolunteerController@show');
+            Route::get('showSelf', 'VolunteerController@showSelf');
+            Route::get('getName/{volunteer}', 'VolunteerController@getName');
+
+            Route::get('/activity/show/{volunteer}', 'ActivityController@show');
 
             Route::middleware('owner')->group(function (){
                 Route::post('update/{volunteer}', 'VolunteerController@update');
@@ -57,18 +58,17 @@ Route::prefix('v1')->namespace('Api\v1')->group(function () {
                     Route::post('update/{activity}', 'ActivityController@update');
                     Route::post('delete/{activity}', 'ActivityController@destroy');
                     Route::post('store/{volunteer}', 'ActivityController@store');
-                    Route::get('show/{volunteer}', 'ActivityController@show');
                 });
 
             });
-
-            Route::middleware('storeVolunteer')->post('store', 'VolunteerController@store');
-            Route::get('show', 'VolunteerController@show');
 
         });
 
 
         Route::middleware('hasCompany')->prefix('group')->group(function () {
+            Route::get('company/show', 'CompanyController@showNotSelf');
+
+
             Route::post('store', 'GroupController@store');
             Route::get('show', 'GroupController@show');
             Route::get('volunteer/show', 'GroupController@volunteerShow');
@@ -87,7 +87,7 @@ Route::prefix('v1')->namespace('Api\v1')->group(function () {
         Route::middleware('admin')->prefix('admin')->group(function () {
             Route::post('confirm/{company}', 'CompanyController@confirm');
             Route::post('unconfirmed/{company}', 'CompanyController@unconfirmed');
-
+            Route::get('show', 'UserController@show');
         });
 
 

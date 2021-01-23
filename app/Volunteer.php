@@ -27,5 +27,9 @@ class Volunteer extends Model
         return $this->belongsToMany(Field::class);
     }
 
+    public function company(){
+        return $this->user->company();
+    }
+
 
 }

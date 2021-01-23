@@ -31,15 +31,15 @@ class GroupValidation extends FormRequest
             'description' => 'string|min:2|max:255',
 
             'companies'=>'required|array|min:1',
-            'companies.*.id'=>'required|exists:companies,id|distinct',
+            'companies.*'=>'required|exists:companies,id|distinct',
 
             'volunteers'=>['required','array','min:1',
-                function ($attribute, $value, $fail) {//check is selectable and has detail or not
+                function ($attribute, $value, $fail) {
                     if (!$this->ownerVolunteer($value))
                         return $fail('شما اجازه دسترسی به این داوطلب را ندارید');
 
                 }],
-            'volunteers.*.id'=>'required|exists:volunteers,id|distinct',
+            'volunteers.*'=>'required|exists:volunteers,id|distinct',
 
         ];
 

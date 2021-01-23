@@ -32,7 +32,9 @@ class VolunteerController extends Controller
             'mobile'=>$validation['mobile'],
             'phone'=>$validation['phone'],
             'social_media'=>$validation['social_media'],
-            'fax'=>$validation['fax'],
+            'fax'=>$validation['state'],
+            'state'=>$validation['city'],
+            'city'=>$validation['fax'],
             'description'=>$validation['description'],
             'public_show'=>$validation['public_show'],
 
@@ -64,6 +66,8 @@ class VolunteerController extends Controller
             'phone'=>$validation['phone'],
             'social_media'=>$validation['social_media'],
             'fax'=>$validation['fax'],
+            'state'=>$validation['state'],
+            'city'=>$validation['city'],
             'description'=>$validation['description'],
             'public_show'=>$validation['public_show'],
         ]);
@@ -78,8 +82,16 @@ class VolunteerController extends Controller
         $volunteers= auth()->user()->volunteers()->get();
         return new VolunteerCollection($volunteers);
     }
+    public function showSelf(){
+        $volunteer= auth()->user()->volunteers()->first();
+        $volunteer->public_show=4;
+
+        return new VolunteerResource($volunteer);
+    }
+
 
     public function showSingle(Volunteer $volunteer){
+        $volunteer->public_show=4;
         return new VolunteerResource($volunteer);
     }
 
@@ -98,11 +110,17 @@ class VolunteerController extends Controller
 
     public function showPublicSingle(Volunteer $volunteer){
         if (auth()->user()->company->confirmed == 1){
+            $volunteer->public_show=3;
             return new VolunteerResource($volunteer);
         }else{
             return new LevelResource($volunteer);
         }
     }
+
+    public function getName(Volunteer $volunteer){
+        return $volunteer->name;
+    }
+
     public function destroy(Volunteer $volunteer){
         $this->decreaseFieldCount($volunteer);
 

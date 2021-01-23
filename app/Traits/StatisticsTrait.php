@@ -19,7 +19,7 @@ trait StatisticsTrait
 
     public function ownerVolunteer($volunteersId){
         foreach ($volunteersId as $vol){
-            $volunteer = Volunteer::find($vol['id']);
+            $volunteer = Volunteer::find($vol);
             if (($volunteer->user->id ?? 0) != auth()->user()->id)
                 return false;
         }
@@ -75,11 +75,13 @@ trait StatisticsTrait
 
     public function increaseFieldCount($fields,$item){
         $item->fields()->attach($fields);
-        foreach ($fields as $field){
+        foreach ($fields ?? [] as $field){
             $field = Field::find($field);
             $field->update(['count'=> $field->count +1 ]);
         }
     }
+
+
     public function decreaseFieldCount($item){
 
 

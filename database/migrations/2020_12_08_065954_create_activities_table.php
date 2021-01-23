@@ -17,6 +17,7 @@ class CreateActivitiesTable extends Migration
             $table->id();
             $table->foreignId('volunteer_id')->references('id')->on('volunteers')->onDelete('cascade');
             $table->date('date');
+            $table->unsignedTinyInteger('hour');
             $table->text('description')->nullable();
             $table->timestamps();
         });

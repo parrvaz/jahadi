@@ -20,10 +20,10 @@ class GroupResource extends JsonResource
         return [
             'id'=>$this->id,
             'name'=>$this->name,
-            'access_level'=>$this->access_level,
+            'access_level'=>strval($this->access_level),
             'description'=>$this->description,
-            'companies'=>new CompanyCollection($this->companies),
-            'volunteers'=>new VolunteerCollection($this->volunteers),
+            'companies'=>array_map('strval', $this->companies->pluck('id')->toArray()),
+            'volunteers'=>array_map('strval',$this->volunteers->pluck('id')->toArray()),
         ];
     }
 }

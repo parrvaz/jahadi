@@ -26,6 +26,8 @@ class VolunteerStoreValidation extends FormRequest
         return [
             'name'=>'required|string|min:2|max:255',
             'profession'=>'required|string|min:2|max:255',
+            'state'=>'string|min:2|max:255',
+            'city'=>'string|min:2|max:255',
             'mobile'=>'required|digits:11',
             'phone'=>'digits:11',
             'social_media'=>'string|min:2|max:255',

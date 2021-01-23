@@ -19,6 +19,8 @@ class CreateVolunteersTable extends Migration
 
             $table->string('name');
             $table->string('profession');
+            $table->string('state')->nullable();
+            $table->string('city')->nullable();
             $table->foreignId('timing_id')->references('id')->on('timings');
             $table->string('picture_url')->nullable();
 
@@ -29,7 +31,7 @@ class CreateVolunteersTable extends Migration
             $table->text('description')->nullable();
             $table->text('activity_history')->nullable();
 
-            $table->unsignedTinyInteger('public_show')->default(1);//0:anything 1:part_1   2:part_1 and 2 3:all(include activities)
+            $table->unsignedTinyInteger('public_show')->default(1)->nullable();//0:anything 1:part_1   2:part_1 and 2 3:all(include activities)
 
             $table->timestamps();
         });

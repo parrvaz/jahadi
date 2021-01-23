@@ -27,11 +27,11 @@ class GroupController extends Controller
         ]);
 
         foreach ($validation['companies'] as $company){
-            $group->companies()->attach($company['id']);
+            $group->companies()->attach($company);
         }
 
         foreach ($validation['volunteers'] as $volunteer){
-            $group->volunteers()->attach($volunteer['id']);
+            $group->volunteers()->attach($volunteer);
         }
 
         return new GroupResource($group);
@@ -48,11 +48,11 @@ class GroupController extends Controller
         $group->volunteers()->detach();
 
         foreach ($validation['companies'] as $company){
-            $group->companies()->attach($company['id']);
+            $group->companies()->attach($company);
         }
 
         foreach ($validation['volunteers'] as $volunteer){
-            $group->volunteers()->attach($volunteer['id']);
+            $group->volunteers()->attach($volunteer);
         }
 
         return new GroupResource($group);
@@ -87,6 +87,8 @@ class GroupController extends Controller
             return $this->permissionDenied();
 
         $volunteer->public_show = $accessLevel;
+        $volunteer->companyName = $volunteer->company->name;
+        $volunteer->companyId = $volunteer->company->id;
         return new LevelResource($volunteer);
     }
 

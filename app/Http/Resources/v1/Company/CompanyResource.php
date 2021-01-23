@@ -19,7 +19,8 @@ class CompanyResource extends JsonResource
             'id'=>$this->id,
             'user_id'=>$this->user_id,
             'name'=>$this->name,
-            'fields'=> new FieldCollection($this->fields()->get()),
+            'fields_title'=> $this->fields()->pluck('title'),
+            'fields'=> array_map('strval', $this->fields()->pluck('id')->toArray()),
 
             'state'=>$this->state,
             'city'=>$this->city,
@@ -31,7 +32,7 @@ class CompanyResource extends JsonResource
             'social_media'=>$this->social_media,
             'phone'=>$this->phone,
             'mobile'=>$this->mobile,
-            'public_show'=>$this->public_show,
+            'public_show'=>strval($this->public_show),
         ];
     }
 }

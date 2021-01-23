@@ -25,6 +25,7 @@ class UserResource extends JsonResource
             'id'=>$this->id,
             'name'=>$this->name,
             'mobile'=>$this->mobile,
+            'type'=>$this->logType,
             'api_token'=>$this->token,
         ];
     }

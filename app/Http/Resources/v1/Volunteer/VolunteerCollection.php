@@ -24,13 +24,15 @@ class VolunteerCollection extends ResourceCollection
                   'name'=>$item->name,
                   'profession'=>$item->profession,
                   'timing'=> new TimingResource(Timing::find($item->timing_id)),
-                  'fields'=> new FieldCollection($item->fields()->get()),
-
+                  'fields_title'=> $item->fields()->pluck('title'),
+                  'fields'=> array_map('strval', $item->fields()->pluck('id')->toArray()),
+                  'description'=>$item->description,
+                  'state'=>$item->state,
+                  'city'=>$item->city,
 //                  'mobile'=>$item->mobile,
 //                  'phone'=>$item->phone,
 //                  'social_media'=>$item->social_media,
 //                  'fax'=>$item->fax,
-//                  'description'=>$item->description,
               ];
             })
         ];

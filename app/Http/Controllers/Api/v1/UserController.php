@@ -36,6 +36,11 @@ class UserController extends Controller
             $token=auth()->user()->createToken('Api token for android');
             $this->clearLoginAttempts($loginValidation);
 
+            if (auth()->user()->type == 1 )
+                auth()->user()->logType = 1;
+            elseif ( count (auth()->user()->company()->get() ) >0 )
+                auth()->user()->logType = 2;
+            else auth()->user()->logType = 0;
             return new UserResource(auth()->user(),$token);
         }
 

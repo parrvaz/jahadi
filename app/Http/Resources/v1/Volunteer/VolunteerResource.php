@@ -18,19 +18,28 @@ class VolunteerResource extends JsonResource
      */
     public function toArray($request)
     {
+        $timing = Timing::find($this->timing_id);
         return [
             'id'=>$this->id,
             'name'=>$this->name,
             'profession'=>$this->profession,
-            'timing'=> new TimingResource(Timing::find($this->timing_id)),
-            'fields'=> new FieldCollection($this->fields()->get()),
+            'timing'=> new TimingResource($timing),
+            'fields_title'=> $this->fields()->pluck('title'),
+            'fields'=> array_map('strval', $this->fields()->pluck('id')->toArray()),
             'mobile'=>$this->mobile,
             'phone'=>$this->phone,
             'social_media'=>$this->social_media,
             'fax'=>$this->fax,
+            'state'=>$this->state,
+            'city'=>$this->city,
             'description'=>$this->description,
             'activity'=>new ActivityCollection($this->activities),
-            'public_show'=>3
+            'public_show'=>$this->public_show,
+
+            'type'=>strval($timing->type),
+            'period'=>strval($timing->period),
+            'number'=>strval($timing->number),
+
         ];
     }
 }

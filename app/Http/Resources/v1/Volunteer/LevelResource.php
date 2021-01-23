@@ -18,25 +18,37 @@ class LevelResource extends JsonResource
      */
     public function toArray($request)
     {
+        $timing = Timing::find($this->timing_id);
+
         $part1 = [
             'id'=>$this->id,
             'name'=>$this->name,
             'profession'=>$this->profession,
             'timing'=> new TimingResource(Timing::find($this->timing_id)),
-            'fields'=> new FieldCollection($this->fields()->get()),
-            'public_show'=>$this->public_show
+            'fields_title'=> $this->fields()->pluck('title'),
+            'fields'=> array_map('strval', $this->fields()->pluck('id')->toArray()),
+            'public_show'=>$this->public_show,
+            'state'=>$this->state,
+            'city'=>$this->city,
+            'companyName'=>$this->companyName,
+            'companyId'=>$this->companyId,
+            'type'=>strval($timing->type),
+            'period'=>strval($timing->period),
+            'number'=>strval($timing->number),
+
         ];
 
-        $part2 =[
+
+        $part2=[
+            'activity'=>new ActivityCollection($this->activities),
+        ];
+
+        $part3 =[
             'mobile'=>$this->mobile,
             'phone'=>$this->phone,
             'social_media'=>$this->social_media,
             'fax'=>$this->fax,
             'description'=>$this->description,
-        ];
-
-        $part3=[
-            'activity'=>new ActivityCollection($this->activities),
         ];
 
         $result=[];

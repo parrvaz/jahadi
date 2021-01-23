@@ -55,11 +55,26 @@ class CompanyController extends Controller
 
 
     public function showSingle(Company $company){
-        return new CompanyResource($company);
+        if ($company->public_show)
+            return new CompanyResource($company);
+        else
+            return $this->permissionDenied();
+    }
+
+    public function showSelf(){
+
+        return new CompanyResource(auth()->user()->company);
     }
 
     public function show(){
         $companies =Company::where('public_show','!=',0)->get();
+        return new CompanyCollection($companies);
+    }
+
+    public function showNotSelf(){
+        $companies =Company::where('public_show','!=',0)->where('id','!=',auth()->user()->company->id)->get();
+
+
         return new CompanyCollection($companies);
     }
 

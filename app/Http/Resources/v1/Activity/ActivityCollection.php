@@ -21,8 +21,10 @@ class ActivityCollection extends ResourceCollection
             'data'=> $this->collection->map(function ($item){
                 return [
                     'id'=>$item->id,
+                    'hour'=>$item->hour,
                     'date'=> $this->gToJ($item->date),
                     'description'=>$item->description,
+                    'volunteerName'=> $item->volunteer->name,
                 ];
             })
         ];
