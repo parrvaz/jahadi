@@ -19,7 +19,7 @@ class CompanyResource extends JsonResource
             'id'=>$this->id,
             'user_id'=>$this->user_id,
             'name'=>$this->name,
-            'fields_title'=> $this->fields()->pluck('title'),
+            'fields_merge'=> new FieldCollection($this->fields()->get()),
             'fields'=> array_map('strval', $this->fields()->pluck('id')->toArray()),
 
             'state'=>$this->state,

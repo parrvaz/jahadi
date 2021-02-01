@@ -21,6 +21,7 @@ Route::prefix('v1')->namespace('Api\v1')->group(function () {
     Route::get('fields', 'FieldController@show');
 
     Route::middleware('auth:api')->group(function () {
+        Route::get('search/{field}', 'FieldController@search');
 
         Route::prefix('company')->group(function () {
             Route::get('show', 'CompanyController@show');
@@ -95,7 +96,3 @@ Route::prefix('v1')->namespace('Api\v1')->group(function () {
 
 });
 
-
-//Route::middleware('auth:api')->get('/user', function (Request $request) {
-//    return $request->user();
-//});

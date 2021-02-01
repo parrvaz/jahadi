@@ -25,7 +25,7 @@ class LevelResource extends JsonResource
             'name'=>$this->name,
             'profession'=>$this->profession,
             'timing'=> new TimingResource(Timing::find($this->timing_id)),
-            'fields_title'=> $this->fields()->pluck('title'),
+            'fields_merge'=> new FieldCollection($this->fields()->get()),
             'fields'=> array_map('strval', $this->fields()->pluck('id')->toArray()),
             'public_show'=>$this->public_show,
             'state'=>$this->state,
@@ -35,6 +35,7 @@ class LevelResource extends JsonResource
             'type'=>strval($timing->type),
             'period'=>strval($timing->period),
             'number'=>strval($timing->number),
+            'description'=>$this->description,
 
         ];
 
@@ -48,8 +49,7 @@ class LevelResource extends JsonResource
             'phone'=>$this->phone,
             'social_media'=>$this->social_media,
             'fax'=>$this->fax,
-            'description'=>$this->description,
-        ];
+          ];
 
         $result=[];
         switch ($this->public_show){

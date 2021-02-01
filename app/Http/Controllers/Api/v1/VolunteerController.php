@@ -80,6 +80,7 @@ class VolunteerController extends Controller
 
     public function show(){
         $volunteers= auth()->user()->volunteers()->get();
+
         return new VolunteerCollection($volunteers);
     }
     public function showSelf(){

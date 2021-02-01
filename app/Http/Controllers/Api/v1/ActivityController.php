@@ -6,11 +6,9 @@ use App\Activity;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Api\v1\ActivitiesValidation;
 use App\Http\Resources\v1\Activity\ActivityCollection;
-use App\Http\Resources\v1\Volunteer\LevelResource;
 use App\Http\Resources\v1\Volunteer\VolunteerResource;
 use App\Traits\StatisticsTrait;
 use App\Volunteer;
-use Illuminate\Http\Request;
 
 class ActivityController extends Controller
 {
@@ -23,7 +21,7 @@ class ActivityController extends Controller
             'description'=> $validation['description'],
         ]);
 
-        return new ActivityCollection($volunteer->activities()->orderBy('date')->get());
+        return new ActivityCollection($volunteer->activities()->orderBy('date')->get(),$volunteer->name);
     }
 
     public function update(ActivitiesValidation $validation,Activity $activity){
@@ -37,16 +35,16 @@ class ActivityController extends Controller
 
     public function show(Volunteer $volunteer){
         if ($volunteer->user->id == auth()->user()->id)
-            return new ActivityCollection($volunteer->activities()->orderBy('date')->get());
+            return new ActivityCollection($volunteer->activities()->orderBy('date')->get(),$volunteer->name);
         elseif (auth()->user()->company->confirmed == 1){
-            return new ActivityCollection($volunteer->activities()->orderBy('date')->get());
+            return new ActivityCollection($volunteer->activities()->orderBy('date')->get(),$volunteer->name);
         }elseif ($volunteer->public_show > 1)
-                return new ActivityCollection($volunteer->activities()->orderBy('date')->get());
+                return new ActivityCollection($volunteer->activities()->orderBy('date')->get(),$volunteer->name);
         else{
             $accessLevel = auth()->user()->company->member_groups()
                 ->whereIn('id',$volunteer->groups()->pluck('id'))->max('access_level');
             if ($accessLevel >1 )
-                return new ActivityCollection($volunteer->activities()->orderBy('date')->get());
+                return new ActivityCollection($volunteer->activities()->orderBy('date')->get(),$volunteer->name);
 
         }//group
 
@@ -58,10 +56,10 @@ class ActivityController extends Controller
 
     public function showPublicActivity(Volunteer $volunteer){
         if (auth()->user()->company->confirmed == 1){
-           return new ActivityCollection($volunteer->activities()->orderBy('date')->get());
+           return new ActivityCollection($volunteer->activities()->orderBy('date')->get(),$volunteer->name);
         }else{
             if ($volunteer->public_show>1)
-                return new ActivityCollection($volunteer->activities()->orderBy('date')->get());
+                return new ActivityCollection($volunteer->activities()->orderBy('date')->get(),$volunteer->name);
 
         }
 
@@ -72,7 +70,7 @@ class ActivityController extends Controller
 
         $volunteer=$activity->volunteer;
         $activity->delete();
-        return new ActivityCollection($volunteer->activities()->orderBy('date')->get());
+        return new ActivityCollection($volunteer->activities()->orderBy('date')->get(),$volunteer->name);
 
     }
 }

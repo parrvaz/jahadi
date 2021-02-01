@@ -24,7 +24,7 @@ class VolunteerResource extends JsonResource
             'name'=>$this->name,
             'profession'=>$this->profession,
             'timing'=> new TimingResource($timing),
-            'fields_title'=> $this->fields()->pluck('title'),
+            'fields_merge'=> new FieldCollection($this->fields()->get()),
             'fields'=> array_map('strval', $this->fields()->pluck('id')->toArray()),
             'mobile'=>$this->mobile,
             'phone'=>$this->phone,

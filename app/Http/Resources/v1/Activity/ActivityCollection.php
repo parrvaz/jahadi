@@ -9,6 +9,15 @@ class ActivityCollection extends ResourceCollection
 {
     use StatisticsTrait;
     /**
+     * ActivityCollection constructor.
+     */
+    public $volunteerName;
+    public function __construct($resource,$volunteerName='مهمان')
+    {
+        $this->volunteerName=$volunteerName;
+        parent::__construct($resource);
+    }
+    /**
      * Transform the resource collection into an array.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -18,13 +27,13 @@ class ActivityCollection extends ResourceCollection
     {
 
         return[
+            'volunteerName'=> $this->volunteerName,
             'data'=> $this->collection->map(function ($item){
                 return [
                     'id'=>$item->id,
                     'hour'=>$item->hour,
                     'date'=> $this->gToJ($item->date),
                     'description'=>$item->description,
-                    'volunteerName'=> $item->volunteer->name,
                 ];
             })
         ];

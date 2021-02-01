@@ -3,7 +3,6 @@
 
 namespace App\Http\Controllers\Api\v1;
 
-use App\Company;
 use App\Group;
 use App\Http\Controllers\Controller;
 
@@ -14,7 +13,6 @@ use App\Http\Resources\v1\Volunteer\LevelResource;
 use App\Http\Resources\v1\Volunteer\VolunteerCollection;
 use App\Traits\StatisticsTrait;
 use App\Volunteer;
-use Illuminate\Http\Request;
 
 class GroupController extends Controller
 {
@@ -73,7 +71,12 @@ class GroupController extends Controller
         $volunteers = collect();
         $groups = auth()->user()->company->member_groups()->get();
         foreach ($groups as $group){
-             $volunteers = $volunteers->merge($group->volunteers()->get());
+            $newVolunteer = $group->volunteers()->get();
+            foreach ($newVolunteer as $volunteer){
+                $volunteer->public_show = $group->access_level;
+            }
+
+             $volunteers = $volunteers->merge($newVolunteer);
         }
 
         return new VolunteerCollection($volunteers);
